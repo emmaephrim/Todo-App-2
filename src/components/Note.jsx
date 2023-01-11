@@ -6,16 +6,32 @@ function Note(props) {
     content: "",
   });
 
-  function handleClick() {}
+  function handleChange(event) {
+    setNote({ title: event.target.title, content: event.target.content });
+  }
 
   return (
-    <form>
-      <label for="title">Title</label>
-      <input type="text" id="title" name="title" />
-      <label for="content">Content</label>
-      <input type="text" id="content" name="content" />
-      <input type="submit" value="Add" />
-    </form>
+    <div>
+      <form>
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          onChange={handleChange}
+          value={note.title}
+        />
+        <label for="content">Content</label>
+        <input
+          type="text"
+          id="content"
+          name="content"
+          value={note.value}
+          onChange={handleChange}
+        />
+        <input type="submit" value="Add" onSubmit={handleSubmit} />
+      </form>
+    </div>
   );
 }
 

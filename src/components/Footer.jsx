@@ -1,6 +1,8 @@
 import React from "react";
 function Footer() {
-  return <footer>Copyright ⓒ 2023</footer>;
+  const today = new Date();
+  const year = today.getFullYear();
+  return <footer>Copyright &copy; {year} </footer>;
 }
 
 export default Footer;
