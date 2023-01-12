@@ -7,12 +7,22 @@ function Note(props) {
   });
 
   function handleChange(event) {
-    setNote({ title: event.target.title, content: event.target.content });
+    if (event.target.name === "title") {
+      setNote({ title: event.target.value, content: note.content });
+    } else if (event.target.name === "content") {
+      setNote({ content: event.target.value, title: note.title });
+    }
+  }
+
+  function handleSubmit(event) {
+    alert(`Todo submitted, Title: ${note.title}, Content: ${note.content} `);
+    event.preventDefault();
+    setNote({ title: "", content: "" });
   }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label for="title">Title</label>
         <input
           type="text"
@@ -26,11 +36,12 @@ function Note(props) {
           type="text"
           id="content"
           name="content"
-          value={note.value}
+          value={note.content}
           onChange={handleChange}
         />
-        <input type="submit" value="Add" onSubmit={handleSubmit} />
+        <input type="submit" value="Add" />
       </form>
+      {note.title} & {note.content}
     </div>
   );
 }
