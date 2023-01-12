@@ -1,47 +1,52 @@
 import React, { useState } from "react";
 
-function Note(props) {
+function Note({ onAdd }) {
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
 
   function handleChange(event) {
-    if (event.target.name === "title") {
-      setNote({ title: event.target.value, content: note.content });
-    } else if (event.target.name === "content") {
-      setNote({ content: event.target.value, title: note.title });
+    const { name, value } = event.target;
+
+    if (name === "title") {
+      setNote({ title: value, content: note.content });
+    } else if (name === "content") {
+      setNote({ content: value, title: note.title });
     }
   }
 
   function handleSubmit(event) {
-    alert(`Todo submitted, Title: ${note.title}, Content: ${note.content} `);
-    event.preventDefault();
-    setNote({ title: "", content: "" });
+    onAdd(note);
+    // setNote({ title: "", content: "" });
+    // event.preventDefault();
   }
+
+  // const oldNote = setNote(...note, note);
+  // console.log(oldNote);
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label for="title">Title</label>
         <input
           type="text"
           id="title"
+          placeholder="Title"
           name="title"
           onChange={handleChange}
           value={note.title}
         />
-        <label for="content">Content</label>
-        <input
+        <textarea
           type="text"
           id="content"
+          placeholder="Content"
           name="content"
           value={note.content}
           onChange={handleChange}
         />
         <input type="submit" value="Add" />
       </form>
-      {note.title} & {note.content}
+      {/* {oldNote} & {note.content} */}
     </div>
   );
 }

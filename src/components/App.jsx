@@ -5,12 +5,14 @@ import Header from "./Header";
 import Note from "./Note";
 
 function App() {
-  const [note, setNote] = useState([]);
+  function addNote(note) {
+    console.log(note);
+  }
 
   return (
     <div>
       <Header />
-      <Note note={note} />
+      <Note onAdd={addNote} />
       <Footer />
     </div>
   );
