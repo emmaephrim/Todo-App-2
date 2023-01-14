@@ -9,6 +9,10 @@ function App() {
   const [note, setNote] = useState({ title: "", content: "" });
   const [oldNotes, setOldNotes] = useState([]);
 
+  function editNote(id) {
+    setNote({ title: oldNotes[id].title, content: oldNotes[id].content });
+  }
+
   return (
     <div>
       <Header />
@@ -27,6 +31,7 @@ function App() {
             id={index}
             setOldNotes={setOldNotes}
             oldNotes={oldNotes}
+            editNote={editNote}
           />
         );
       })}
