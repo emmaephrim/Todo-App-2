@@ -3,16 +3,34 @@ import "../css/App.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import Note from "./Note";
+import Todo from "./Todo";
 
 function App() {
-  function addNote(note) {
-    console.log(note);
-  }
+  const [note, setNote] = useState({ title: "", content: "" });
+  const [oldNotes, setOldNotes] = useState([]);
 
   return (
     <div>
       <Header />
-      <Note onAdd={addNote} />
+      <Note
+        note={note}
+        setNote={setNote}
+        oldNotes={oldNotes}
+        setOldNotes={setOldNotes}
+      />
+      {oldNotes.map((item, index) => {
+        return (
+          <Todo
+            title={item.title}
+            content={item.content}
+            key={index}
+            id={index}
+            setOldNotes={setOldNotes}
+            oldNotes={oldNotes}
+          />
+        );
+      })}
+
       <Footer />
     </div>
   );

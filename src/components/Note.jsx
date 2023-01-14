@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 
-function Note({ onAdd }) {
-  const [note, setNote] = useState({
-    title: "",
-    content: "",
-  });
-
+function Note({ note, setNote, oldNotes, setOldNotes }) {
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -17,13 +12,10 @@ function Note({ onAdd }) {
   }
 
   function handleSubmit(event) {
-    onAdd(note);
-    // setNote({ title: "", content: "" });
-    // event.preventDefault();
+    setOldNotes([...oldNotes, note]);
+    setNote({ title: "", content: "" });
+    event.preventDefault();
   }
-
-  // const oldNote = setNote(...note, note);
-  // console.log(oldNote);
 
   return (
     <div>
@@ -46,7 +38,6 @@ function Note({ onAdd }) {
         />
         <input type="submit" value="Add" />
       </form>
-      {/* {oldNote} & {note.content} */}
     </div>
   );
 }
