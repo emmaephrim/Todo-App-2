@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Todo({ title, content, id, setOldNotes, oldNotes, editNote }) {
   function handleDeleteClick() {
@@ -10,7 +10,6 @@ function Todo({ title, content, id, setOldNotes, oldNotes, editNote }) {
   }
 
   function handleEditClick() {
-    // setEdit({ title: oldNotes[id].title, content: oldNotes[id].content });
     editNote(id);
 
     setOldNotes(
