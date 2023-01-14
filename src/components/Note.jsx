@@ -12,9 +12,15 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
   }
 
   function handleSubmit(event) {
-    setOldNotes([...oldNotes, note]);
-    setNote({ title: "", content: "" });
     event.preventDefault();
+
+    if (note.title !== "" && note.content !== "") {
+      setOldNotes([...oldNotes, note]);
+    } else {
+      alert("Please complete the form");
+    }
+
+    setNote({ title: "", content: "" });
   }
 
   return (
