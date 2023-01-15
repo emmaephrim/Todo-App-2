@@ -44,8 +44,8 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
           onChange={handleChange}
           className="d-block"
         />
-        <button type="submit" className="note-button bg-info mt-2 rounded ">
-          Add
+        <button type="submit" className="note-button bg-dark text-light ">
+          <i class="bi bi-plus-lg"></i>
         </button>
       </form>
     </div>

@@ -28,20 +28,58 @@ textarea {
 }
 
 .note-button{
-    width: 60px;
+    width: 50px;
+    height:  50px;
     position: absolute;
     right: 0;
-    border: black solid 2px;
+    border: whitesmoke solid 3px;
+    border-radius: 80%;
+    /* border: 0; */
     }
-
-/* *:focus{
-    outline: none;
-} */
-
+.note-button:hover{
+    background-color: cyan;
+    color: black;
+    
+}
+.note-body i {
+    /* font-size: large; */
+    font-size: 20px;
+}
 
 .todo-body {
-    width: 300px;
-    margin: auto;
+    /* width: 25%;
+    display: inline-block;
+    margin: 3px;
+    
     background-color: whitesmoke;
-    margin-top: 6px;
+    border-radius: 9px;
+    margin-top: 20px;
+    padding: 5px; */
+
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    display: inline-block;
+    float: left;
+}
+/* .todo-body button{
+    width: 15px;
+} */
+
+footer {
+    display: relative;
+}
+
+footer div{
+    position: absolute;
+        width: 100%;
+        color: black;
+        font-weight: bold;
+        /* line-height: 40px; */
+        /* font-size: 0.7em; */
+        text-align: center;
+        bottom:0;
 }

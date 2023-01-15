@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Note from "./Note";
 import Todo from "./Todo";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   const [note, setNote] = useState({ title: "", content: "" });

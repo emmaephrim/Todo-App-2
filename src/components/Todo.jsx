@@ -24,8 +24,12 @@ function Todo({ title, content, id, setOldNotes, oldNotes, editNote }) {
       <span> {id + 1} </span>
       <b> {title} </b>
       <p> {content} </p>
-      <button onClick={handleDeleteClick}>Delete</button>
-      <button onClick={handleEditClick}>Edit</button>
+      <button onClick={handleDeleteClick} className=" btn btn-outline-info">
+        <i className="bi bi-trash text-danger"></i>
+      </button>
+      <button onClick={handleEditClick} className="btn btn-outline-primary">
+        <i class="bi bi-pencil"></i>
+      </button>
     </div>
   );
 }
