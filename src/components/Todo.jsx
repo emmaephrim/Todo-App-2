@@ -20,7 +20,7 @@ function Todo({ title, content, id, setOldNotes, oldNotes, editNote }) {
   }
 
   return (
-    <div id={id}>
+    <div id={id} className="todo-body">
       <span> {id + 1} </span>
       <b> {title} </b>
       <p> {content} </p>

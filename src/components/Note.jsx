@@ -24,7 +24,7 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
   }
 
   return (
-    <div>
+    <div className="note-body   bg-light p-3 mt-4 rounded shadow-lg">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -33,6 +33,7 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
           name="title"
           onChange={handleChange}
           value={note.title}
+          className="mb-3"
         />
         <textarea
           type="text"
@@ -41,8 +42,11 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
           name="content"
           value={note.content}
           onChange={handleChange}
+          className="d-block"
         />
-        <input type="submit" value="Add" />
+        <button type="submit" className="note-button bg-info mt-2 rounded ">
+          Add
+        </button>
       </form>
     </div>
   );

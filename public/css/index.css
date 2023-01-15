@@ -1,0 +1,47 @@
+.note-body {
+    /* display: flex; */
+    /* justify-content: center; */
+    margin: auto;
+    width: 350px;
+    /* width: 70px; */
+    /* margin-left:  280px; */
+    /* margin-right: 280px; */
+}
+
+.note-body form{
+    position: relative;
+
+}
+
+.note-body input{ 
+    outline: none;
+    /* width: 20%;  */
+     background-color: transparent; 
+     border: none;
+} 
+
+textarea {
+    outline: none;
+    /* width: 20%;  */
+     background-color: transparent; 
+     border: none;
+}
+
+.note-button{
+    width: 60px;
+    position: absolute;
+    right: 0;
+    border: black solid 2px;
+    }
+
+/* *:focus{
+    outline: none;
+} */
+
+
+.todo-body {
+    width: 300px;
+    margin: auto;
+    background-color: whitesmoke;
+    margin-top: 6px;
+}
