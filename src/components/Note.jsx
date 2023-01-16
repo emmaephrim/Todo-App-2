@@ -36,15 +36,18 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
           className="mb-3"
         />
         <textarea
+          autoFocus
           type="text"
           id="content"
           placeholder="Content"
           name="content"
+          cols="27"
+          rows="3.5"
           value={note.content}
           onChange={handleChange}
           className="d-block"
         />
-        <button type="submit" className="note-button bg-dark text-light ">
+        <button type="submit" className="note-button">
           <i class="bi bi-plus-lg"></i>
         </button>
       </form>

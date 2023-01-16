@@ -1,48 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header {
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 5px;
+}
 .note-body {
-    /* display: flex; */
-    /* justify-content: center; */
     margin: auto;
     width: 350px;
-    /* width: 70px; */
-    /* margin-left:  280px; */
-    /* margin-right: 280px; */
 }
 
 .note-body form{
     position: relative;
-
 }
 
 .note-body input{ 
     outline: none;
-    /* width: 20%;  */
      background-color: transparent; 
      border: none;
+     width: 320px;
 } 
+@media screen and (max-width: 576px) {
+    .note-body {
+        width: 225px;
+        /* background-color: lightgreen;    */
+    }
+    .note-body input {
+        width: 200px;
+    }
+    textarea {
+        width: 200px;
+        /* background-color: orange; */
+    }
+}
+
+.note-body input::placeholder{
+    color: black;
+    font-weight: bold;
+}
+
+.note-body textarea::placeholder{
+    color: black;
+    font-weight: 200px;
+}
 
 textarea {
     outline: none;
-    /* width: 20%;  */
      background-color: transparent; 
      border: none;
+     /* width: 320px; */
+     white-space: pre-wrap;
+   word-wrap: break-word;
 }
 
 .note-button{
     width: 50px;
     height:  50px;
     position: absolute;
+    background-color: black;
+    color: whitesmoke;
     right: 0;
     border: whitesmoke solid 3px;
     border-radius: 80%;
-    /* border: 0; */
     }
 .note-button:hover{
-    background-color: cyan;
+    background-color: #0cc6eb;
     color: black;
     
 }
 .note-body i {
-    /* font-size: large; */
     font-size: 20px;
 }
 
@@ -62,8 +91,8 @@ textarea {
     padding: 10px;
     width: 240px;
     margin: 16px;
-    display: inline-block;
-    float: left;
+    display: flex;
+    /* float: left; */
 }
 /* .todo-body button{
     width: 15px;
@@ -78,8 +107,6 @@ footer div{
         width: 100%;
         color: black;
         font-weight: bold;
-        /* line-height: 40px; */
-        /* font-size: 0.7em; */
         text-align: center;
         bottom:0;
 }
