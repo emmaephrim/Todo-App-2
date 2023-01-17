@@ -23,28 +23,16 @@
      border: none;
      width: 320px;
 } 
-@media screen and (max-width: 576px) {
-    .note-body {
-        width: 225px;
-    }
-    .note-body input {
-        width: 200px;
-    }
-    textarea {
-        width: 200px;
-        border: none;
-        background-color: transparent; 
-    }
-}
 
 .note-body input::placeholder{
     color: #0cc6eb;
-    font-weight: 400px;
+    font-weight: 500;
 }
 
 .note-body textarea::placeholder{
     color: #0cc6eb;
-    font-weight: 400px;
+    font-weight: 500;
+    font: 800;
 }
 
 @media  screen and (min-width: 576px) {
@@ -80,26 +68,13 @@
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
-    /* width: 240px; */
     border: 2px black solid;
-
-    /* height: 180px; */
-    /* margin: 16px; */
 }
-/* .todo-item button{
-    width: 15px;
-} */
 
 .list-control {
-    /* display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: center; */
-    /* background-color: red; */
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    /* grid-template-columns: auto auto auto auto auto; */
     gap: 10px;
-    /* background-color: #2196F3; */
     padding: 15px;
     margin-top: 10px;
 }
@@ -111,15 +86,59 @@
     
 }
 
-footer {
-    /* display: relative; */
-}
+/* footer {
+    display: relative;
+} */
 
-/* footer div{
+/* footer {
     position: absolute;
         width: 100%;
         color: black;
         font-weight: bold;
         text-align: center;
         bottom:0;
-} */
+    } */
+    @media screen and (max-width: 576px) {
+        .note-body {
+            width: 225px;
+        }
+        .note-body input {
+            width: 200px;
+        }
+        textarea {
+            width: 200px;
+            border: none;
+            background-color: transparent; 
+        }
+       
+        .list-control {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+@media screen and (min-width: 576px) {
+        .list-control {
+            grid-template-columns: auto auto ;
+        }
+    }
+@media screen and (min-width: 768px) {
+    .list-control {
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (min-width: 992px) {
+    .list-control {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .list-control {
+        grid-template-columns: auto auto auto auto auto;
+    }
+} 
+@media screen and (min-width: 1400px) {
+    .list-control {
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+}
