@@ -27,6 +27,7 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
     <div className="note-body   bg-light p-3 mt-4 rounded shadow-lg">
       <form onSubmit={handleSubmit}>
         <input
+          autoFocus
           type="text"
           id="title"
           placeholder="Title"
@@ -36,12 +37,12 @@ function Note({ note, setNote, oldNotes, setOldNotes }) {
           className="mb-3"
         />
         <textarea
-          autoFocus
+          // autoFocus
           type="text"
           id="content"
           placeholder="Content"
           name="content"
-          cols="27"
+          // cols="31"/
           rows="3.5"
           value={note.content}
           onChange={handleChange}

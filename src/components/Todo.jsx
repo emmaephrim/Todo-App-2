@@ -21,16 +21,20 @@ function Todo({ title, content, id, setOldNotes, oldNotes, editNote }) {
 
   return (
     <div>
-      <div id={id} className="todo-body">
-        <span> {id + 1} </span>
-        <b> {title} </b>
-        <p> {content} </p>
-        <button onClick={handleDeleteClick} className=" btn btn-outline-info">
-          <i className="bi bi-trash text-danger"></i>
-        </button>
-        <button onClick={handleEditClick} className="btn btn-outline-primary">
-          <i class="bi bi-pencil"></i>
-        </button>
+      <div id={id} className="todo-item">
+        <div>
+          <span style={{ fontWeight: "bold" }}> {id + 1}. </span>
+          <b style={{ color: "#0cc6eb" }}> {title} </b>
+          <p> {content} </p>
+        </div>
+        <div className="item-edit-control">
+          <button onClick={handleDeleteClick} className=" btn btn-danger  me-2">
+            <i className="bi bi-trash text-light"></i>
+          </button>
+          <button onClick={handleEditClick} className="btn btn-success">
+            <i class="bi bi-pencil"></i>
+          </button>
+        </div>
       </div>
     </div>
   );

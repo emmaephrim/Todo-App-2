@@ -22,19 +22,21 @@ function App() {
         oldNotes={oldNotes}
         setOldNotes={setOldNotes}
       />
-      {oldNotes.map((item, index) => {
-        return (
-          <Todo
-            title={item.title}
-            content={item.content}
-            key={index}
-            id={index}
-            setOldNotes={setOldNotes}
-            oldNotes={oldNotes}
-            editNote={editNote}
-          />
-        );
-      })}
+      <div className="list-control">
+        {oldNotes.map((item, index) => {
+          return (
+            <Todo
+              title={item.title}
+              content={item.content}
+              key={index}
+              id={index}
+              setOldNotes={setOldNotes}
+              oldNotes={oldNotes}
+              editNote={editNote}
+            />
+          );
+        })}
+      </div>
 
       <Footer />
     </div>
